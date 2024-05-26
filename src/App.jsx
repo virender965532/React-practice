@@ -3,11 +3,15 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Testing from './Testing';
 import Listing from './Listing';
 import CustomInput from './CustomInput';
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Chat from "./pages/Chat";
+import Groups from "./pages/Groups";
 
-const Home = lazy(()=> import("./pages/Home"));
-const Login = lazy(()=> import("./pages/Login"));
-const Chat = lazy(()=> import("./pages/Chat"));
-const Groups = lazy(()=> import("./pages/Groups"));
+// const Home = lazy(()=> import("./pages/Home"));
+// const Login = lazy(()=> import("./pages/Login"));
+// const Chat = lazy(()=> import("./pages/Chat"));
+// const Groups = lazy(()=> import("./pages/Groups"));
 
 function App() {
   console.log("App component render")
@@ -16,6 +20,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/chat/:chatId" element={<Chat />} />
         <Route path="/groups" element={<Groups />} />
         <Route path="/login" element={<Login />} />
